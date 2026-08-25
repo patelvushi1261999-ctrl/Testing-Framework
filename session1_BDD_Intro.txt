@@ -1,0 +1,68 @@
+1. Simple Gherkin Feature File (Food Delivery App – Zomato style)
+
+Feature: User Login
+
+  Scenario: Successful login with valid credentials
+    Given the user is on the login page
+    When the user enters a valid phone number and password
+    And clicks the "Login" button
+    Then the user should be redirected to the home page
+
+  Scenario: Failed login with invalid credentials
+    Given the user is on the login page
+    When the user enters an incorrect password
+    And clicks the "Login" button
+    Then an error message "Invalid credentials" should be displayed
+---------------------------------------------------------------------------------------------
+2. Daily App Example – Instagram
+
+Scenario: Search by username
+  Given the user is logged into Instagram
+  When the user searches for "john_doe"
+  Then the profile "john_doe" should appear in search results
+
+Scenario: Search by hashtag
+  Given the user is logged into Instagram
+  When the user searches for "#travel"
+  Then posts tagged with "#travel" should be displayed
+
+Alternative App Example – Paytm (Payments)
+
+Scenario: Successful payment
+  Given the user is logged into Paytm
+  When the user enters a valid UPI ID and amount
+  And clicks "Pay"
+  Then the payment should be successful and a confirmation message shown
+
+Scenario: Failed payment
+  Given the user is logged into Paytm
+  When the user enters an invalid UPI ID
+  And clicks "Pay"
+  Then an error message "Invalid UPI ID" should be displayed
+---------------------------------------------------------------------------------------------
+
+3. BDD vs Pytest (Flipkart Product Search)
+
+	BDD(Gherkin + Cucumber)						Pytest
+
+Written in plain English (Given/When/Then)			Written in Python functions with assertions
+Readable by business analysts, testers, developers		Primarily for developers/testers
+Feature files + step definitions				Python test files + functions
+Given user searches for "Laptop"				def test_search_laptop(): assert "Laptop" in results
+
+---------------------------------------------------------------------------------------------
+
+4. Scenario Explanation
+Scenario: Add item to cart  
+This represents a real-world e-commerce test where a logged-in user adds a product to their cart. The test verifies that the cart updates correctly with the product and recalculates the total price — ensuring shopping cart functionality works as expected.
+
+---------------------------------------------------------------------------------------------
+
+5. Job Market Insights – Cucumber BDD Mentions
+From Naukri and LinkedIn job postings:
+
+Naukri (Aug 2026): Over 2,700+ jobs mention Cucumber/BDD. Roles include QA Automation Engineer, SDET, Test Lead. Skills listed: Selenium, Java, Cucumber, Gherkin. Often marked as required for automation testing roles.
+
+LinkedIn: BDD/Gherkin is highlighted in QA Automation and Agile Testing roles. Typically listed as preferred or required skill for test automation frameworks.
+
+Summary: BDD/Cucumber is now a core requirement in most automation testing jobs, especially for Selenium + Java/Python frameworks. Gherkin is valued for bridging business and technical teams.
