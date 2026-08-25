@@ -1,0 +1,64 @@
+Feature: Product Search
+
+  Scenario: Search for a product by name
+    Given the user is on the Flipkart home page
+    When the user searches for "Laptop"
+    Then the search results should show "Laptop"
+
+  Scenario: Search for mobiles in Electronics category
+    Given the user is on the Electronics category page
+    When the user searches for "Mobiles"
+    Then the search results should show "Mobiles" items
+----------------------------------------------------------------------------------------------------------------------------
+
+
+# test_search_product.py
+# Run with: pytest -v
+
+from pytest_bdd import scenario, given, when, then, parsers
+
+# ---------------------------
+# Feature Scenarios (Gherkin)
+# ---------------------------
+
+@scenario("search_product.feature", "Search for a product by name")
+def test_search_product():
+    pass
+
+@scenario("search_product.feature", "Search for mobiles in Electronics category")
+def test_search_by_category():
+    pass
+
+# ---------------------------
+# Step Definitions (stubs)
+# ---------------------------
+
+@given("the user is on the Flipkart home page")
+def user_on_homepage():
+    # Stub: setup homepage
+    pass
+
+@when(parsers.parse('the user searches for "{product}"'))
+def user_searches_product(product):
+    # Stub: simulate search
+    pass
+
+@then(parsers.parse('the search results should show "{product}"'))
+def search_results_show_product(product):
+    # Stub: verify results
+    pass
+
+@given("the user is on the Electronics category page")
+def user_on_category_page():
+    # Stub: setup category page
+    pass
+
+@when(parsers.parse('the user searches for "{subcategory}"'))
+def user_searches_category(subcategory):
+    # Stub: simulate category search
+    pass
+
+@then(parsers.parse('the search results should show "{subcategory}" items'))
+def search_results_show_category(subcategory):
+    # Stub: verify category results
+    pass
